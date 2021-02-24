@@ -7,9 +7,9 @@ do
         echo ${returnval}
         if [[ ${returnval} != *FAIL* ]]
         then
-            if [ -f profile.out ]
+            if [[ -f profile.out ]]
             then
-                cat profile.out | grep -v "mode: set" >> acc.out
+                grep -v "mode: set" profile.out >> acc.out
             fi
         else
             exit 1
